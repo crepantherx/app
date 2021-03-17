@@ -4,7 +4,7 @@ pipeline {
 	    stage('Build') { // build and tag docker image
 		steps {
 		    	script {  
-				sh "docker build -t crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${BUILD_NUMBER}.${GIT_COMMIT} ."
+				sh "docker build -t crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:latest -t crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${BUILD_NUMBER}.${GIT_COMMIT} ."
 		    	}
 		}
 	    }
