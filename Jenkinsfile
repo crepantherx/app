@@ -8,7 +8,13 @@ pipeline {
 		    	}
 		}
 	    }
-
+	    stage('Test') {
+		steps {
+		    	script {  
+				sh "echo 'Testing'"
+		    	}
+		}
+	    }
 	    stage('Deploy'){
 		steps {
 			script {  
