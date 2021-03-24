@@ -9,7 +9,7 @@ pipeline {
 		}
 	    }
 
-	    stage('Upload'){
+	    stage('Deploy'){
 		steps {
 			script {  
 				docker.withRegistry('https://http://10.64.140.44/', 'jfrog') {
