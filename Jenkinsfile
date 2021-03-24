@@ -13,7 +13,7 @@ pipeline {
 		steps {
 			script {  
 				docker.withRegistry('https://http://10.64.140.44/', 'jfrog') {
-					sh "docker push 10.64.140.44/techmahindra-docker-dev-local/notes:${GIT_COMMIT}"
+					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${GIT_COMMIT}"
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:latest"
 				}
 			}
