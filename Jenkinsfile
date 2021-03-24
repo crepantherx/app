@@ -12,7 +12,7 @@ pipeline {
 	    stage('Deploy'){
 		steps {
 			script {  
-				docker.withRegistry('crepantherx.jfrog.io', 'jfrog') {
+				docker.withRegistry('https://crepantherx.jfrog.io', 'jfrog') {
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${GIT_COMMIT}"
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:latest"
 				}
