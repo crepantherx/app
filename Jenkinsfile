@@ -15,13 +15,20 @@ pipeline {
 		    	}
 		}
 	    }
-	    stage('Deploy'){
+	    stage('Staging') {
 		steps {
-			script {  
+		    	script {  
 				docker.withRegistry('https://crepantherx.jfrog.io', 'jfrog') {
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${GIT_COMMIT}"
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:latest"
 				}
+		    	}
+		}
+	    }
+	    stage('Production'){
+		steps {
+			script {  
+				sh "echo 'Staging'"
 			}
 		}
 	    }
