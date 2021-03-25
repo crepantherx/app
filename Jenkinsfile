@@ -15,7 +15,7 @@ pipeline {
 		    	}
 		}
 	    }
-	    stage('Staging') {
+	    stage('Stage') {
 		steps {
 		    	script {  
 				docker.withRegistry('https://crepantherx.jfrog.io', 'jfrog') {
@@ -30,6 +30,7 @@ pipeline {
 		steps {
 			script {  
 				sh "echo 'Staging'"
+				sh "sudo microk8s kubectl get pods"
 			}
 		}
 	    }
