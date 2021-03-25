@@ -21,7 +21,7 @@ pipeline {
 				docker.withRegistry('https://crepantherx.jfrog.io', 'jfrog') {
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${GIT_COMMIT}"
 					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:latest"
-					sh "docker push crepantherx.jfrog.io/techmahindra-docker-dev-local/notes:${env.BUILD_ID}"
+		
 				}
 		    	}
 		}
